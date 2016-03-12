@@ -14,8 +14,11 @@ body a{
 .header{
 	background:#F8E514;
 }
-.logo{
+#logo-resize {
 	float: left;
+	display: block;
+	height: 20%;
+	width: auto;
 	margin-top: 0.25em;
 }
 .logo a{

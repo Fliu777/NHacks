@@ -12,12 +12,28 @@ body a{
 }
 /*-----start-header----*/
 .header{
-	background:#F8E514;
+	background:#FF4D4D;
 }
 .logo{
 	float: left;
 	margin-top: 0.25em;
 }
+
+.logo a img {
+	width: 75px;
+	height: 75px;
+	
+}
+
+.logo-text {
+	display: inline-block;
+	margin-left: 0.5em;
+	float: left;
+	color: #000;
+	font-weight: 700;
+	font-family: 'Exo', sans-serif;
+}
+
 .logo a{
 	color: #FFF;
 	font-weight: 700;
@@ -49,6 +65,8 @@ body a{
 	text-transform: uppercase;
 	position: relative;
 	font-weight: 700;
+
+	font-family: 'Exo', sans-serif;
 }
 .top-nav ul li.active a,
 .top-nav ul li a:hover{
@@ -132,7 +150,7 @@ nav a#pull {
 	nav a#pull {
 		display: block;
 		position: relative;
-		color: #F26D7D;
+		color: #FF4D4D;
 		text-align: right;
 		position: absolute;
 		top:12px;
@@ -548,7 +566,7 @@ span.second{
 }
 /*-----*/
 .show-reel{
-	background:#F8E514;
+	background:#FF4D4D;
 	margin:2em 0 0;
 }
 .show-reel h5 span{
@@ -569,7 +587,7 @@ span.second{
 }
 /*--- team ---*/
 .team{
-	background: #F5F5F5;
+	background: #FF4D4D;
 	padding: 2em 0 5em;
 }
 .team-member-info{

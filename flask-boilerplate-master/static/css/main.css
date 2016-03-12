@@ -26,6 +26,14 @@ a {
   background: #555;
   color: #FFF;
 }
+
+#intro {
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	background-color: yellow;
+}
 /* Main elements end */
 
 
