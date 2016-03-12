@@ -47,8 +47,13 @@ def home():
 
 
 @app.route('/about')
-def about():
-    return render_template('pages/placeholder.about.html')
+def data_display():
+    return render_template('pretty_front/data_display.html')
+
+@app.route('/machine_trading')
+def machine_trading():
+    return render_template('pretty_front/machine_trading.html')
+
 
 
 @app.route('/login')
