@@ -2,12 +2,13 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Jym</title>
+		<title>Jymbit</title>
 		<link href="static/css/bootstrap.css" rel='stylesheet' type='text/css' />
-		<link rel="shortcut icon" href="static/img/fav.png" />	
+		<link rel="shortcut icon" href="static/img/logo.png" />	
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="static/js/jquery.min.js"></script>
-		 <!---- start-smoth-scrolling---->
+
+		 <!-- start-smoth-scrolling-->
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
 		<script type="text/javascript">
@@ -18,13 +19,20 @@
 				});
 			});
 		</script>
+		<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" 
+					type="text/css" />
+					<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js">
+					</script>
+					<script type="text/javascript">
+						Bokeh.set_log_level("info");
+					</script>
 		 <!-- Custom Theme files -->
 		<link href="static/css/style.css" rel='stylesheet' type='text/css' />
    		 <!-- Custom Theme files -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</script>
-		<!----webfonts---->
+		<!--webfonts-->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Exo:400,900,800' rel='stylesheet' type='text/css'>
 		<!----//webfonts---->
@@ -60,15 +68,15 @@
 							<a href="#"><img src="static/img/logo.png" title="logo" /></a> 
 						</div>
 						<div class="logo-text">
-							<h1>Jym</h1>
+							<h1>Jymbit</h1>
 						</div>
 						<!----start-top-nav---->
 						 <nav class="top-nav">
 							<ul class="top-nav">
 								<li class="active"><a href="#home" class="scroll">Home </a></li>
 								<li class="page-scroll"><a href="#fea" class="scroll">Features</a></li>
-								<li class="page-scroll"><a href="#gallery" class="scroll">Login</a></li>
-								<li class="page-scroll"><a href="#about" class="scroll">Sign Up</a></li>
+								<li class="page-scroll"><a href="#gallery" class="scroll">Data Display</a></li>
+								<li class="page-scroll"><a href="#trade" class="scroll">Equipment Trading</a></li>
 							</ul>
 							<a href="#" id="pull"><img src="static/img/nav-icon.png" title="menu" /></a>
 						</nav>
@@ -100,11 +108,9 @@
 			
 			    });
 			  </script>
-			<!----//End-slider-script---->
-			<!-- Slideshow 4 -->
-			<!--divice-->
+
 			    	<div class="divice-demo">
-			    		<img src="static/img/divice-in-hand.png" title="demo" />
+			    		<img src="static/img/phone_3.png" title="demo" />
 			    	</div>
 			    <!--//divice-->
 			    <div   class="callbacks_container">
@@ -113,14 +119,15 @@
 			        <li>
 			          <img src="static/img/slide.jpg" alt="">
 			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h1>Introducing <span>Jym.</span></h1>
-			          		<h2>Grab your Gym bros!</h2>
-			          		<div class="slide-text">
-			          			<ul>
-			          				<li><span> </span>Connect with your Gym friends </li>
-			          				<li><span> </span>Know what machines are popular </li>
-			          				<li><span> </span>$$$ PROFIT $$$</li>
+			          	<div class="slide-text-info white-text">
+			          		<h1>Introducing <span>Jymbit</span></h1>
+			         
+			          		<div class="slide-text white-text">
+			          			<ul id="bull">
+			          				<li>Get analytics by connecting your gym to the Internet of Things!</li>
+			          				<li>Optimize your business for the future of fitness</li>
+			          				<li>Identify underutilised equipment and equipment shortages</li>
+			          				<li>Trade and share your equipment with other gyms</li>
 			          			</ul>
 			          		</div>
 			          		<div class="clearfix"> </div>
@@ -134,150 +141,200 @@
 			      </ul>
 			    </div>
 			    <div class="clearfix"> </div>
-			    
-			<!----- //End-slider---->
 			</div>
-			<!-----//header-section----->
-			<!----features----->
+
+
 			<div id="fea" class="features">
 				<div class="container">
 					<div class="section-head text-center">
-						<h3><span class="frist"> </span>AMAZING FEATURES<span class="second"> </span></h3>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
+						<h3><span class="frist"> </span>FEATURES<span class="second"> </span></h3>
 					</div>
-					<!----features-grids----->
+
 					<div class="features-grids">
-						<div class="col-md-4 features-grid">
+						<!-- 4 -->
+						<div class="col-md-8 features-grid">
 							<div class="features-grid-info">
+								<!-- 2 -->
 								<div class="col-md-2 features-icon">
 									<span class="f-icon0"> </span>
 								</div>
 								<div class="col-md-10 features-info">
-									<h4>Accusan timar</h4>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+									<h4>Get Analytics for Equipment Usage</h4>
+									<p>Identify your underutilised equipment and equipment shortages with our integrated sensor technology and dynamic database. Easily identify potential opportunities to cut costs and generate additional revenue in an intuitive web application.</p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 							<div class="features-grid-info">
+								<!-- 2 -->
 								<div class="col-md-2 features-icon">
 									<span class="f-icon1"> </span>
 								</div>
 								<div class="col-md-10 features-info">
-									<h4>Accusan timar</h4>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+									<h4>Connect with Other Gyms and Franchises</h4>
+									<p>Trade and share your equipment with other gyms. Purchase equipment for lower rates and sell excess equipment to generate additional revenue.</p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 							<div class="features-grid-info">
+								<!-- 2 -->
 								<div class="col-md-2 features-icon">
 									<span class="f-icon2"> </span>
 								</div>
 								<div class="col-md-10 features-info">
-									<h4>Accusan timar</h4>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+									<h4>Intuitive Interface</h4>
+									<p>No complex math or programming skills required; our application is extremely intuitive and complete with beautiful visual displays.</p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 							
-						</div><!---end-features-grid---->
+						</div>
+						<!-- col-md-4 -->
 						<div class="col-md-4 features-grid">
-							<div class="big-divice">
-								<img src="static/img/divice.png" title="features-demo" />
+							<div class="big-divice" id="guy-resize">
+								<img src="static/img/pic1_2.jpg" title="features-demo" />
 							</div>
-						</div><!---end-features-grid---->
-						<div class="col-md-4 features-grid">
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon1">
-									<span class="f-icon3"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>Accusan timar</h4>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon1">
-									<span class="f-icon4"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>Accusan timar</h4>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon1">
-									<span class="f-icon5"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>Accusan timar</h4>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							
-						</div><!---end-features-grid---->
+						</div>
+						
 						<div class="clearfix"> </div>
 					</div>
 				</div>
-					<!----//features-grids----->
-					<!----//features----->
-					<!----screen-shot-gallery---->
-					<div id="gallery" class="screen-shot-gallery">
-						<div class="container">
-							<div class="section-head text-center">
-								<h3><span class="frist"> </span>SCREENSHOTS GALLERY<span class="second"> </span></h3>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
-							</div>
-						</div>
-						<!----sreen-gallery-cursual---->
-						<div class="sreen-gallery-cursual">
-							 <!-- requried-jsfiles-for owl -->
-							<link href="static/css/owl.carousel.css" rel="stylesheet">
-							    <script src="static/js/owl.carousel.js"></script>
-							        <script>
-							    $(document).ready(function() {
-							      $("#owl-demo").owlCarousel({
-							        items : 3,
-							        lazyLoad : true,
-							        autoPlay : true,
-							      });
-							    });
-							    </script>
-							 <!-- //requried-jsfiles-for owl -->
-							 <!-- start content_slider -->
-							 <div class="container">
-						       <div id="owl-demo" class="owl-carousel">
-					                <div class="item">
-					                	<img class="lazyOwl" data-src="static/img/screen.png" alt="screen-name">
-					                </div>
-					                <div class="item">
-					                	<img class="lazyOwl" data-src="static/img/screen.png" alt="screen-name">
-					                </div>
-					                <div class="item">
-					                	<img class="lazyOwl" data-src="static/img/screen.png" alt="screen-name">
-					                </div>
-					                <div class="item">
-					                	<img class="lazyOwl" data-src="static/img/screen.png" alt="screen-name">
-					                </div>
-					                <div class="item">
-					                	<img class="lazyOwl" data-src="static/img/screen.png" alt="screen-name">
-					                </div>
-					                <div class="item">
-					                	<img class="lazyOwl" data-src="static/img/screen.png" alt="screen-name">
-					                </div>
-					                <div class="item">
-					                	<img class="lazyOwl" data-src="static/img/screen.png" alt="screen-name">
-					                </div>
-					                <div class="item">
-					                	<img class="lazyOwl" data-src="static/img/screen.png" alt="screen-name">
-					                </div>
-				              </div>
-						</div>
-						<!--//sreen-gallery-cursual---->
+
+				</br>
+				</br>
+				<div id="gallery" class="container">
+
+					<div class="section-head text-center">
+						<h3><span class="frist"> </span>DATA SHARING FOR A SMARTER EXERCISE ECONOMY<span class="second"> </span></h3>
+						<p>Check out some of our data visualizations</p>
 					</div>
-				</div>		
+					
+
+
+					<div class="plotdiv" id="f7a14457-8028-4aee-861a-13306246316b"></div>
+<script type="text/javascript">
+Bokeh.$(function() {
+var docs_json = {"c2ec97c1-77f5-4c47-b0df-ffac3bf7d405":{"roots":{"references":[{"attributes":{"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"}},"id":"ec46afcf-bca7-4ee0-9712-855a694448aa","type":"HelpTool"},{"attributes":{"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"}},"id":"bf1c037c-eece-451d-b7e3-a9e4b6d078db","type":"PreviewSaveTool"},{"attributes":{"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"}},"id":"c5657dfe-b596-4ad0-adeb-351dc82df145","type":"PreviewSaveTool"},{"attributes":{"callback":null,"end":55.0,"start":-5.0},"id":"62e47eb4-65b3-4047-b136-6dbdc2303464","type":"Range1d"},{"attributes":{"callback":null,"end":55.0,"start":-5.0},"id":"21698230-99b5-4d82-9fa1-a310a81c56ce","type":"Range1d"},{"attributes":{"below":[{"id":"632d4570-6e82-4ec3-92c5-ff20000e56fe","type":"LinearAxis"}],"left":[{"id":"257c645a-1e0f-42b1-91c5-51266f7634b4","type":"LinearAxis"}],"legend":false,"renderers":[{"id":"c7c129a0-62b0-4f89-a54e-4f1c0ba2648b","type":"BoxAnnotation"},{"id":"244a1de3-2848-4c79-ba8c-bb6a1daf9894","type":"GlyphRenderer"},{"id":"632d4570-6e82-4ec3-92c5-ff20000e56fe","type":"LinearAxis"},{"id":"257c645a-1e0f-42b1-91c5-51266f7634b4","type":"LinearAxis"},{"id":"5f667dbe-3146-403a-a0a4-b1c9810803b1","type":"Grid"},{"id":"016fb160-182c-4fd2-8269-21a1f49f4f90","type":"Grid"}],"title":"Statistics for Weights March 10th, 2016","title_text_font_size":{"value":"14pt"},"tool_events":{"id":"546c4426-1cd9-4292-b6b5-5151c115bfd9","type":"ToolEvents"},"tools":[{"id":"e69927b0-fb2b-4537-8056-4400c84f46bc","type":"PanTool"},{"id":"30de481d-f678-4a52-aec1-123669ca1fac","type":"WheelZoomTool"},{"id":"c12863d9-a62e-4b5e-abeb-1b9110df2cfc","type":"BoxZoomTool"},{"id":"ce2aed9d-201b-4f01-adee-1b7b05d04538","type":"PreviewSaveTool"},{"id":"49a31038-c3f3-4b83-a30f-f4fe14662b09","type":"ResizeTool"},{"id":"4d295598-d7ae-4b6e-95f0-dc39f8fa7b52","type":"ResetTool"},{"id":"7a236d87-b0b2-4030-94cb-cef633e263b6","type":"HelpTool"}],"x_mapper_type":"auto","x_range":{"id":"62e47eb4-65b3-4047-b136-6dbdc2303464","type":"Range1d"},"xscale":"auto","y_mapper_type":"auto","y_range":{"id":"8cc305a8-acff-45b2-af22-d8fbd11bd692","type":"Range1d"},"yscale":"auto"},"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"},{"attributes":{"callback":null,"end":90.33653802592796,"start":24.514860179461095},"id":"efc72b54-c993-46e0-bf83-e84adc86050d","type":"Range1d"},{"attributes":{"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"}},"id":"c03b3283-d96e-4a67-8ca8-81a9e7960d39","type":"HelpTool"},{"attributes":{"callback":null,"end":100.09783905101796,"start":16.191101631207466},"id":"7b0a30f9-3492-467f-b470-72df780106e7","type":"Range1d"},{"attributes":{},"id":"57acbc0a-d509-4a6f-b3a6-98055a0a73dc","type":"BasicTicker"},{"attributes":{"callback":null,"end":55.0,"start":-5.0},"id":"ee263af7-bf85-44e9-9c94-e0a6e3500150","type":"Range1d"},{"attributes":{},"id":"e751c162-843b-4888-9e58-8ff0e139bf8a","type":"ToolEvents"},{"attributes":{"children":[[{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"},{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"}],[{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"},{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"}]]},"id":"621446cd-45e1-40f0-91d1-0f7a4c34ae8e","type":"GridPlot"},{"attributes":{},"id":"546c4426-1cd9-4292-b6b5-5151c115bfd9","type":"ToolEvents"},{"attributes":{"axis_label":"Time","formatter":{"id":"8eed4867-4658-4e99-8315-6251372b5f7e","type":"BasicTickFormatter"},"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"},"ticker":{"id":"7f228020-5b2b-4d78-a0da-131371737ee5","type":"BasicTicker"}},"id":"53b99a77-8631-4123-89f1-df21b919ad90","type":"LinearAxis"},{"attributes":{"overlay":{"id":"c7c129a0-62b0-4f89-a54e-4f1c0ba2648b","type":"BoxAnnotation"},"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"}},"id":"c12863d9-a62e-4b5e-abeb-1b9110df2cfc","type":"BoxZoomTool"},{"attributes":{"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"}},"id":"8ee22fd6-1f68-4dac-89c2-985f39f6f32b","type":"WheelZoomTool"},{"attributes":{"below":[{"id":"aeb9eb6e-162e-489f-99c1-0dd869acfc06","type":"LinearAxis"}],"left":[{"id":"dd601ebc-8607-4490-9aab-6f8843ffe62b","type":"LinearAxis"}],"legend":false,"renderers":[{"id":"8e8b9d36-c1d9-4184-8bd2-3b0a91143f68","type":"BoxAnnotation"},{"id":"f7603bb0-7f32-413f-b1b6-0bef516b343d","type":"GlyphRenderer"},{"id":"aeb9eb6e-162e-489f-99c1-0dd869acfc06","type":"LinearAxis"},{"id":"dd601ebc-8607-4490-9aab-6f8843ffe62b","type":"LinearAxis"},{"id":"9d381e67-f656-40e7-b877-3afea2b25fae","type":"Grid"},{"id":"2f1d4ab5-7ac2-4659-ab18-a24c5fa0e185","type":"Grid"}],"title":"Statistics for Tread Mill March 10th, 2016","title_text_font_size":{"value":"14pt"},"tool_events":{"id":"c3af9993-e242-4081-9901-243b19b4bed1","type":"ToolEvents"},"tools":[{"id":"84e2700c-f3df-4eeb-89fe-12191f76bc8c","type":"PanTool"},{"id":"d40246ee-b903-41e3-843e-850cb8e50bb4","type":"WheelZoomTool"},{"id":"2b85147f-b350-4632-9df8-56d43a1aa788","type":"BoxZoomTool"},{"id":"c5657dfe-b596-4ad0-adeb-351dc82df145","type":"PreviewSaveTool"},{"id":"bd42210e-5cbb-4191-8cc6-4a1ee6f4323e","type":"ResizeTool"},{"id":"3ad9ef7d-594e-4845-8231-4e0c328ff584","type":"ResetTool"},{"id":"c03b3283-d96e-4a67-8ca8-81a9e7960d39","type":"HelpTool"}],"x_mapper_type":"auto","x_range":{"id":"ee263af7-bf85-44e9-9c94-e0a6e3500150","type":"Range1d"},"xscale":"auto","y_mapper_type":"auto","y_range":{"id":"efc72b54-c993-46e0-bf83-e84adc86050d","type":"Range1d"},"yscale":"auto"},"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"},{"attributes":{"data_source":{"id":"876ec59d-402e-4fc4-a873-13d1a8306283","type":"ColumnDataSource"},"glyph":{"id":"1d5ff91d-389e-4c21-b04d-b5f3383321f1","type":"Line"},"hover_glyph":null,"nonselection_glyph":null,"selection_glyph":null},"id":"dac394f3-9eb1-4899-b36d-3b9ec957feee","type":"GlyphRenderer"},{"attributes":{"axis_label":"Percentage Filled","formatter":{"id":"f8598f49-1429-436e-9524-af9b3de67c2f","type":"BasicTickFormatter"},"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"},"ticker":{"id":"57acbc0a-d509-4a6f-b3a6-98055a0a73dc","type":"BasicTicker"}},"id":"dd601ebc-8607-4490-9aab-6f8843ffe62b","type":"LinearAxis"},{"attributes":{},"id":"c3af9993-e242-4081-9901-243b19b4bed1","type":"ToolEvents"},{"attributes":{},"id":"58efc40e-97a1-4eff-b923-82c9e7ce95f9","type":"BasicTicker"},{"attributes":{"overlay":{"id":"8e8b9d36-c1d9-4184-8bd2-3b0a91143f68","type":"BoxAnnotation"},"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"}},"id":"2b85147f-b350-4632-9df8-56d43a1aa788","type":"BoxZoomTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"e7f0f7b6-6923-4d57-8210-f05a926103f1","type":"BoxAnnotation"},{"attributes":{"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"},"ticker":{"id":"58efc40e-97a1-4eff-b923-82c9e7ce95f9","type":"BasicTicker"}},"id":"5c7a4f8a-7f70-4f7b-aba3-fa634a651785","type":"Grid"},{"attributes":{"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"}},"id":"3ad9ef7d-594e-4845-8231-4e0c328ff584","type":"ResetTool"},{"attributes":{"below":[{"id":"dd0e9fb3-5598-4f4f-8ad1-520a556b8e87","type":"LinearAxis"}],"left":[{"id":"e4ff2de2-bfc3-49ad-8208-1951abc02e99","type":"LinearAxis"}],"legend":false,"renderers":[{"id":"e4586b83-95f3-4ffa-a367-fd6501803a31","type":"BoxAnnotation"},{"id":"dac394f3-9eb1-4899-b36d-3b9ec957feee","type":"GlyphRenderer"},{"id":"dd0e9fb3-5598-4f4f-8ad1-520a556b8e87","type":"LinearAxis"},{"id":"e4ff2de2-bfc3-49ad-8208-1951abc02e99","type":"LinearAxis"},{"id":"5c7a4f8a-7f70-4f7b-aba3-fa634a651785","type":"Grid"},{"id":"803b430b-a4c7-406f-a70f-3030c0ad23e5","type":"Grid"}],"title":"Statistics for Bench March 10th, 2016","title_text_font_size":{"value":"14pt"},"tool_events":{"id":"e751c162-843b-4888-9e58-8ff0e139bf8a","type":"ToolEvents"},"tools":[{"id":"66c383e6-0cfd-4ac9-aef9-e5168ea9ca4d","type":"PanTool"},{"id":"8ee22fd6-1f68-4dac-89c2-985f39f6f32b","type":"WheelZoomTool"},{"id":"85c23c04-0518-4344-9cf7-ac0f54965781","type":"BoxZoomTool"},{"id":"bf1c037c-eece-451d-b7e3-a9e4b6d078db","type":"PreviewSaveTool"},{"id":"b20ad619-1de6-479c-9e42-d4d2136c12a7","type":"ResizeTool"},{"id":"b83d3407-04da-4f9c-b1aa-28555db81101","type":"ResetTool"},{"id":"4fd8d7a3-601e-441e-931e-75ce323ffb58","type":"HelpTool"}],"x_mapper_type":"auto","x_range":{"id":"21698230-99b5-4d82-9fa1-a310a81c56ce","type":"Range1d"},"xscale":"auto","y_mapper_type":"auto","y_range":{"id":"7b0a30f9-3492-467f-b470-72df780106e7","type":"Range1d"},"yscale":"auto"},"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"},{"attributes":{},"id":"e7160612-0228-4b8d-ab03-4569e55a1e13","type":"BasicTickFormatter"},{"attributes":{"data_source":{"id":"9e07f2f9-2190-4f60-96da-9cd1b4489b5e","type":"ColumnDataSource"},"glyph":{"id":"1fee541d-7c67-4155-b76c-d4d2f2362fa4","type":"Line"},"hover_glyph":null,"nonselection_glyph":null,"selection_glyph":null},"id":"244a1de3-2848-4c79-ba8c-bb6a1daf9894","type":"GlyphRenderer"},{"attributes":{"axis_label":"Time","formatter":{"id":"123b819e-0bf6-4f47-b4c2-ba41e27b24fe","type":"BasicTickFormatter"},"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"},"ticker":{"id":"7ce4c918-230d-41d1-a2e6-6534f0d060fe","type":"BasicTicker"}},"id":"632d4570-6e82-4ec3-92c5-ff20000e56fe","type":"LinearAxis"},{"attributes":{"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"}},"id":"30de481d-f678-4a52-aec1-123669ca1fac","type":"WheelZoomTool"},{"attributes":{"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"},"ticker":{"id":"7f228020-5b2b-4d78-a0da-131371737ee5","type":"BasicTicker"}},"id":"a087846e-5afd-4c0d-9dc2-5b89564da1f2","type":"Grid"},{"attributes":{"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"}},"id":"80dba7d3-2a7a-46a2-b6ea-860f1a5ff4fe","type":"ResetTool"},{"attributes":{"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"},"ticker":{"id":"7ce4c918-230d-41d1-a2e6-6534f0d060fe","type":"BasicTicker"}},"id":"5f667dbe-3146-403a-a0a4-b1c9810803b1","type":"Grid"},{"attributes":{"axis_label":"Percentage Filled","formatter":{"id":"3a88baca-215b-460f-9337-c63266f2003a","type":"BasicTickFormatter"},"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"},"ticker":{"id":"76f8de1f-eb26-430f-8c74-44e83ce1a519","type":"BasicTicker"}},"id":"e4ff2de2-bfc3-49ad-8208-1951abc02e99","type":"LinearAxis"},{"attributes":{"line_width":{"value":2},"x":{"field":"x_values"},"y":{"field":"y_values"}},"id":"1fee541d-7c67-4155-b76c-d4d2f2362fa4","type":"Line"},{"attributes":{},"id":"f8598f49-1429-436e-9524-af9b3de67c2f","type":"BasicTickFormatter"},{"attributes":{"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"}},"id":"19e57564-241e-4769-b1a1-e6ddec5140f7","type":"ResizeTool"},{"attributes":{},"id":"7f228020-5b2b-4d78-a0da-131371737ee5","type":"BasicTicker"},{"attributes":{"data_source":{"id":"aa50fca7-be8f-4c56-8939-3dbec19aab29","type":"ColumnDataSource"},"glyph":{"id":"909c38e8-b50b-4a21-ac41-37f32951baff","type":"Line"},"hover_glyph":null,"nonselection_glyph":null,"selection_glyph":null},"id":"f7603bb0-7f32-413f-b1b6-0bef516b343d","type":"GlyphRenderer"},{"attributes":{},"id":"6740611e-5fee-4570-9695-72fbf8bb1775","type":"BasicTickFormatter"},{"attributes":{"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"}},"id":"bd42210e-5cbb-4191-8cc6-4a1ee6f4323e","type":"ResizeTool"},{"attributes":{},"id":"1a7e0c99-8a08-4fba-9572-96ca5803a257","type":"BasicTickFormatter"},{"attributes":{"dimension":1,"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"},"ticker":{"id":"76f8de1f-eb26-430f-8c74-44e83ce1a519","type":"BasicTicker"}},"id":"803b430b-a4c7-406f-a70f-3030c0ad23e5","type":"Grid"},{"attributes":{"data_source":{"id":"6e2d2802-6c7f-4de9-8024-dfaa33887fcf","type":"ColumnDataSource"},"glyph":{"id":"22a84d2d-0eaa-445e-9a89-a7339b7103b2","type":"Line"},"hover_glyph":null,"nonselection_glyph":null,"selection_glyph":null},"id":"1b4be6b0-eef4-4f69-b454-1ce0110eaf87","type":"GlyphRenderer"},{"attributes":{"dimension":1,"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"},"ticker":{"id":"6855de84-d8f1-41dd-b47f-eb23d069a135","type":"BasicTicker"}},"id":"016fb160-182c-4fd2-8269-21a1f49f4f90","type":"Grid"},{"attributes":{},"id":"7ce4c918-230d-41d1-a2e6-6534f0d060fe","type":"BasicTicker"},{"attributes":{"callback":null,"end":55.0,"start":-5.0},"id":"b085e949-a369-47df-aa4b-7e1f98da7ea4","type":"Range1d"},{"attributes":{"callback":null,"column_names":["x_values","y_values"],"data":{"chart_index":["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],"x_values":[0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16,17,17,18,18,19,19,20,20,21,21,22,22,23,23,24,24,25,25,26,26,27,27,28,28,29,29,30,30,31,31,32,32,33,33,34,34,35,35,36,36,37,37,38,38,39,39,40,40,41,41,42,42,43,43,44,44,45,45,46,46,47,47,48,48,49,49,50,50],"y_values":[30.0,30.0,34.5,34.5,32.775000000000006,32.775000000000006,31.136250000000008,31.136250000000008,28.02262500000001,28.02262500000001,29.42375625000001,29.42375625000001,32.366131875000015,32.366131875000015,30.747825281250016,30.747825281250016,27.673042753125014,27.673042753125014,24.905738477812513,24.905738477812513,22.415164630031263,22.415164630031263,20.173648167028137,20.173648167028137,23.199695392082354,23.199695392082354,23.199695392082354,23.199695392082354,26.679649700894707,26.679649700894707,28.013632185939443,28.013632185939443,32.21567701383036,32.21567701383036,35.437244715213396,35.437244715213396,37.20910695097407,37.20910695097407,35.34865160342537,35.34865160342537,31.81378644308283,31.81378644308283,30.22309712092869,30.22309712092869,27.20078740883582,27.20078740883582,28.560826779277612,28.560826779277612,29.988868118241495,29.988868118241495,28.489424712329424,28.489424712329424,27.064953476712954,27.064953476712954,25.711705802877308,25.711705802877308,24.426120512733444,24.426120512733444,24.426120512733444,24.426120512733444,23.204814487096773,23.204814487096773,26.685536660161286,26.685536660161286,29.354090326177417,29.354090326177417,27.88638580986855,27.88638580986855,32.06934368134883,32.06934368134883,32.06934368134883,32.06934368134883,33.672810865416274,33.672810865416274,31.989170322145462,31.989170322145462,35.18808735436001,35.18808735436001,33.42868298664201,33.42868298664201,33.42868298664201,33.42868298664201,31.757248837309913,31.757248837309913,28.581523953578923,28.581523953578923,27.152447755899978,27.152447755899978,24.43720298030998,24.43720298030998,26.88092327834098,26.88092327834098,28.22496944225803,28.22496944225803,28.22496944225803,28.22496944225803,28.22496944225803,28.22496944225803,31.047466386483833,31.047466386483833,27.94271974783545]}},"id":"6e2d2802-6c7f-4de9-8024-dfaa33887fcf","type":"ColumnDataSource"},{"attributes":{"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"}},"id":"4fd8d7a3-601e-441e-931e-75ce323ffb58","type":"HelpTool"},{"attributes":{},"id":"3a88baca-215b-460f-9337-c63266f2003a","type":"BasicTickFormatter"},{"attributes":{},"id":"e2852667-9e48-4592-b5f3-746037497ae7","type":"BasicTicker"},{"attributes":{"axis_label":"Percentage Filled","formatter":{"id":"e7160612-0228-4b8d-ab03-4569e55a1e13","type":"BasicTickFormatter"},"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"},"ticker":{"id":"e2852667-9e48-4592-b5f3-746037497ae7","type":"BasicTicker"}},"id":"d653ba3a-58ad-4629-b8dd-88b03a6ade40","type":"LinearAxis"},{"attributes":{"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"}},"id":"b3d9131d-8e86-47a2-b852-bc90227e6680","type":"WheelZoomTool"},{"attributes":{},"id":"8eed4867-4658-4e99-8315-6251372b5f7e","type":"BasicTickFormatter"},{"attributes":{"overlay":{"id":"e4586b83-95f3-4ffa-a367-fd6501803a31","type":"BoxAnnotation"},"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"}},"id":"85c23c04-0518-4344-9cf7-ac0f54965781","type":"BoxZoomTool"},{"attributes":{},"id":"fbbe408e-835d-49aa-8c17-d7b06f79d29e","type":"BasicTicker"},{"attributes":{"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"}},"id":"49a31038-c3f3-4b83-a30f-f4fe14662b09","type":"ResizeTool"},{"attributes":{},"id":"123b819e-0bf6-4f47-b4c2-ba41e27b24fe","type":"BasicTickFormatter"},{"attributes":{"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"}},"id":"66c383e6-0cfd-4ac9-aef9-e5168ea9ca4d","type":"PanTool"},{"attributes":{"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"}},"id":"193135e4-f489-4af6-ba58-becdc8c89d28","type":"PreviewSaveTool"},{"attributes":{"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"},"ticker":{"id":"fbbe408e-835d-49aa-8c17-d7b06f79d29e","type":"BasicTicker"}},"id":"9d381e67-f656-40e7-b877-3afea2b25fae","type":"Grid"},{"attributes":{"callback":null,"end":38.91265282936866,"start":18.470102288633544},"id":"8cd81657-9e07-4dab-9660-303ec0de4f28","type":"Range1d"},{"attributes":{"callback":null,"end":53.04716522477071,"start":20.30692344858903},"id":"8cc305a8-acff-45b2-af22-d8fbd11bd692","type":"Range1d"},{"attributes":{"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"}},"id":"b83d3407-04da-4f9c-b1aa-28555db81101","type":"ResetTool"},{"attributes":{"below":[{"id":"53b99a77-8631-4123-89f1-df21b919ad90","type":"LinearAxis"}],"left":[{"id":"d653ba3a-58ad-4629-b8dd-88b03a6ade40","type":"LinearAxis"}],"legend":false,"renderers":[{"id":"e7f0f7b6-6923-4d57-8210-f05a926103f1","type":"BoxAnnotation"},{"id":"1b4be6b0-eef4-4f69-b454-1ce0110eaf87","type":"GlyphRenderer"},{"id":"53b99a77-8631-4123-89f1-df21b919ad90","type":"LinearAxis"},{"id":"d653ba3a-58ad-4629-b8dd-88b03a6ade40","type":"LinearAxis"},{"id":"a087846e-5afd-4c0d-9dc2-5b89564da1f2","type":"Grid"},{"id":"c8f9377d-90ec-47ed-b002-9fb0c107ac4c","type":"Grid"}],"title":"Statistics for Squat Rack March 10th, 2016","title_text_font_size":{"value":"14pt"},"tool_events":{"id":"16ae0ec4-424b-4f59-a227-62205a2b0d4a","type":"ToolEvents"},"tools":[{"id":"cb43afe8-f6b6-49f0-b210-930fc2a47d92","type":"PanTool"},{"id":"b3d9131d-8e86-47a2-b852-bc90227e6680","type":"WheelZoomTool"},{"id":"06c8277c-36e5-4960-9d70-90f5c0b072a6","type":"BoxZoomTool"},{"id":"193135e4-f489-4af6-ba58-becdc8c89d28","type":"PreviewSaveTool"},{"id":"19e57564-241e-4769-b1a1-e6ddec5140f7","type":"ResizeTool"},{"id":"80dba7d3-2a7a-46a2-b6ea-860f1a5ff4fe","type":"ResetTool"},{"id":"ec46afcf-bca7-4ee0-9712-855a694448aa","type":"HelpTool"}],"x_mapper_type":"auto","x_range":{"id":"b085e949-a369-47df-aa4b-7e1f98da7ea4","type":"Range1d"},"xscale":"auto","y_mapper_type":"auto","y_range":{"id":"8cd81657-9e07-4dab-9660-303ec0de4f28","type":"Range1d"},"yscale":"auto"},"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"},{"attributes":{"callback":null,"column_names":["x_values","y_values"],"data":{"chart_index":["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],"x_values":[0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16,17,17,18,18,19,19,20,20,21,21,22,22,23,23,24,24,25,25,26,26,27,27,28,28,29,29,30,30,31,31,32,32,33,33,34,34,35,35,36,36,37,37,38,38,39,39,40,40,41,41,42,42,43,43,44,44,45,45,46,46,47,47,48,48,49,49,50,50],"y_values":[30.0,30.0,33.0,33.0,33.0,33.0,31.35,31.35,36.0525,36.0525,39.65775000000001,39.65775000000001,35.691975000000006,35.691975000000006,32.122777500000005,32.122777500000005,35.33505525000001,35.33505525000001,35.33505525000001,35.33505525000001,31.80154972500001,31.80154972500001,31.80154972500001,31.80154972500001,28.62139475250001,28.62139475250001,25.75925527725001,25.75925527725001,23.183329749525008,23.183329749525008,26.660829211953757,26.660829211953757,27.993870672551445,27.993870672551445,25.194483605296302,25.194483605296302,23.934759425031487,23.934759425031487,25.131497396283063,25.131497396283063,25.131497396283063,25.131497396283063,28.90122200572552,28.90122200572552,30.346283106011796,30.346283106011796,27.311654795410618,27.311654795410618,30.042820274951684,30.042820274951684,34.549243316194435,34.549243316194435,36.27670548200416,36.27670548200416,39.90437603020458,39.90437603020458,45.89003243473527,45.89003243473527,50.479035678208795,50.479035678208795,55.52693924602968,55.52693924602968,63.85598013293412,63.85598013293412,73.43437715287423,73.43437715287423,77.10609601051794,77.10609601051794,77.10609601051794,77.10609601051794,80.96140081104384,80.96140081104384,93.10561093270042,93.10561093270042,81.93293762077639,81.93293762077639,77.83629073973758,77.83629073973758,73.9444762027507,73.9444762027507,81.33892382302578,81.33892382302578,77.27197763187449,77.27197763187449,73.40837875028078,73.40837875028078,73.40837875028078,73.40837875028078,66.0675408752527,66.0675408752527,59.460786787727436,59.460786787727436,62.43382612711381,62.43382612711381,71.79890004618088,71.79890004618088,78.97879005079896,78.97879005079896,90.8256085584188,90.8256085584188,90.8256085584188]}},"id":"876ec59d-402e-4fc4-a873-13d1a8306283","type":"ColumnDataSource"},{"attributes":{"callback":null,"column_names":["x_values","y_values"],"data":{"chart_index":["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],"x_values":[0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16,17,17,18,18,19,19,20,20,21,21,22,22,23,23,24,24,25,25,26,26,27,27,28,28,29,29,30,30,31,31,32,32,33,33,34,34,35,35,36,36,37,37,38,38,39,39,40,40,41,41,42,42,43,43,44,44,45,45,46,46,47,47,48,48,49,49,50,50],"y_values":[30.0,30.0,30.0,30.0,34.5,34.5,31.05,31.05,27.945,27.945,32.13675,32.13675,36.9572625,36.9572625,33.26153625,33.26153625,29.935382625,29.935382625,26.9418443625,26.9418443625,24.24765992625,24.24765992625,23.035276929937503,23.035276929937503,23.035276929937503,23.035276929937503,24.18704077643438,24.18704077643438,26.60574485407782,26.60574485407782,27.936032096781712,27.936032096781712,25.14242888710354,25.14242888710354,23.885307442748367,23.885307442748367,27.46810355916062,27.46810355916062,26.09469838120259,26.09469838120259,30.008903138382976,30.008903138382976,28.50845798146383,28.50845798146383,27.08303508239064,27.08303508239064,24.37473157415158,24.37473157415158,26.812204731566737,26.812204731566737,30.834035441301747,30.834035441301747,30.834035441301747,30.834035441301747,29.292333669236662,29.292333669236662,33.68618371962216,33.68618371962216,33.68618371962216,33.68618371962216,30.317565347659944,30.317565347659944,31.833443615042942,31.833443615042942,33.425115795795094,33.425115795795094,38.438883165164356,38.438883165164356,38.438883165164356,38.438883165164356,36.51693900690614,36.51693900690614,40.16863290759676,40.16863290759676,46.19392784373627,46.19392784373627,46.19392784373627,46.19392784373627,43.88423145154946,43.88423145154946,43.88423145154946,43.88423145154946,48.27265459670441,48.27265459670441,45.8590218668692,45.8590218668692,43.566070773525745,43.566070773525745,47.92267785087832,47.92267785087832,50.31881174342224,50.31881174342224,50.31881174342224,50.31881174342224,45.28693056908001,45.28693056908001,40.758237512172016,40.758237512172016,46.87197313899782,46.87197313899782,42.184775825098036]}},"id":"9e07f2f9-2190-4f60-96da-9cd1b4489b5e","type":"ColumnDataSource"},{"attributes":{"axis_label":"Time","formatter":{"id":"59420571-9c57-42bb-9182-d7a524882319","type":"BasicTickFormatter"},"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"},"ticker":{"id":"fbbe408e-835d-49aa-8c17-d7b06f79d29e","type":"BasicTicker"}},"id":"aeb9eb6e-162e-489f-99c1-0dd869acfc06","type":"LinearAxis"},{"attributes":{"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"}},"id":"84e2700c-f3df-4eeb-89fe-12191f76bc8c","type":"PanTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"e4586b83-95f3-4ffa-a367-fd6501803a31","type":"BoxAnnotation"},{"attributes":{"dimension":1,"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"},"ticker":{"id":"57acbc0a-d509-4a6f-b3a6-98055a0a73dc","type":"BasicTicker"}},"id":"2f1d4ab5-7ac2-4659-ab18-a24c5fa0e185","type":"Grid"},{"attributes":{"line_color":{"value":"blue"},"line_width":{"value":2},"x":{"field":"x_values"},"y":{"field":"y_values"}},"id":"909c38e8-b50b-4a21-ac41-37f32951baff","type":"Line"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"c7c129a0-62b0-4f89-a54e-4f1c0ba2648b","type":"BoxAnnotation"},{"attributes":{"callback":null,"column_names":["x_values","y_values"],"data":{"chart_index":["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],"x_values":[0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16,17,17,18,18,19,19,20,20,21,21,22,22,23,23,24,24,25,25,26,26,27,27,28,28,29,29,30,30,31,31,32,32,33,33,34,34,35,35,36,36,37,37,38,38,39,39,40,40,41,41,42,42,43,43,44,44,45,45,46,46,47,47,48,48,49,49,50,50],"y_values":[30.0,30.0,34.5,34.5,36.225,36.225,39.847500000000004,39.847500000000004,43.83225000000001,43.83225000000001,48.21547500000001,48.21547500000001,55.44779625000001,55.44779625000001,60.992575875000014,60.992575875000014,64.04220466875002,64.04220466875002,60.84009443531252,60.84009443531252,69.9661086006094,69.9661086006094,76.96271946067034,76.96271946067034,80.81085543370386,80.81085543370386,80.81085543370386,80.81085543370386,80.81085543370386,80.81085543370386,84.85139820538906,84.85139820538906,80.60882829511961,80.60882829511961,76.57838688036364,76.57838688036364,72.74946753634546,72.74946753634546,76.38694091316275,76.38694091316275,68.74824682184648,68.74824682184648,65.31083448075415,65.31083448075415,58.77975103267874,58.77975103267874,52.90177592941087,52.90177592941087,52.90177592941087,52.90177592941087,52.90177592941087,52.90177592941087,47.61159833646978,47.61159833646978,54.753338086940246,54.753338086940246,62.96633879998128,62.96633879998128,69.26297267997941,69.26297267997941,65.79982404598044,65.79982404598044,59.2198416413824,59.2198416413824,59.2198416413824,59.2198416413824,53.297857477244165,53.297857477244165,53.297857477244165,53.297857477244165,53.297857477244165,53.297857477244165,53.297857477244165,53.297857477244165,55.96275035110637,55.96275035110637,58.76088786866169,58.76088786866169,64.63697665552786,64.63697665552786,61.405127822751474,61.405127822751474,58.334871431613905,58.334871431613905,58.334871431613905,58.334871431613905,55.418127860033216,55.418127860033216,55.418127860033216,55.418127860033216,55.418127860033216,55.418127860033216,60.95994064603654,60.95994064603654,54.86394658143289,54.86394658143289,57.60714391050454,57.60714391050454,54.72678671497932,54.72678671497932,51.99044737923035]}},"id":"aa50fca7-be8f-4c56-8939-3dbec19aab29","type":"ColumnDataSource"},{"attributes":{"line_color":{"value":"red"},"line_width":{"value":2},"x":{"field":"x_values"},"y":{"field":"y_values"}},"id":"1d5ff91d-389e-4c21-b04d-b5f3383321f1","type":"Line"},{"attributes":{"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"}},"id":"7a236d87-b0b2-4030-94cb-cef633e263b6","type":"HelpTool"},{"attributes":{"overlay":{"id":"e7f0f7b6-6923-4d57-8210-f05a926103f1","type":"BoxAnnotation"},"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"}},"id":"06c8277c-36e5-4960-9d70-90f5c0b072a6","type":"BoxZoomTool"},{"attributes":{"dimension":1,"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"},"ticker":{"id":"e2852667-9e48-4592-b5f3-746037497ae7","type":"BasicTicker"}},"id":"c8f9377d-90ec-47ed-b002-9fb0c107ac4c","type":"Grid"},{"attributes":{"axis_label":"Percentage Filled","formatter":{"id":"1a7e0c99-8a08-4fba-9572-96ca5803a257","type":"BasicTickFormatter"},"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"},"ticker":{"id":"6855de84-d8f1-41dd-b47f-eb23d069a135","type":"BasicTicker"}},"id":"257c645a-1e0f-42b1-91c5-51266f7634b4","type":"LinearAxis"},{"attributes":{"axis_label":"Time","formatter":{"id":"6740611e-5fee-4570-9695-72fbf8bb1775","type":"BasicTickFormatter"},"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"},"ticker":{"id":"58efc40e-97a1-4eff-b923-82c9e7ce95f9","type":"BasicTicker"}},"id":"dd0e9fb3-5598-4f4f-8ad1-520a556b8e87","type":"LinearAxis"},{"attributes":{"line_color":{"value":"green"},"line_width":{"value":2},"x":{"field":"x_values"},"y":{"field":"y_values"}},"id":"22a84d2d-0eaa-445e-9a89-a7339b7103b2","type":"Line"},{"attributes":{},"id":"6855de84-d8f1-41dd-b47f-eb23d069a135","type":"BasicTicker"},{"attributes":{"plot":{"id":"0e104000-6a4f-4b01-95ef-931fde653584","subtype":"Chart","type":"Plot"}},"id":"b20ad619-1de6-479c-9e42-d4d2136c12a7","type":"ResizeTool"},{"attributes":{"plot":{"id":"ca86e135-410b-49aa-a300-b77b69314e48","subtype":"Chart","type":"Plot"}},"id":"cb43afe8-f6b6-49f0-b210-930fc2a47d92","type":"PanTool"},{"attributes":{},"id":"16ae0ec4-424b-4f59-a227-62205a2b0d4a","type":"ToolEvents"},{"attributes":{"plot":{"id":"4475f1c4-e8d7-485f-9416-976140be7902","subtype":"Chart","type":"Plot"}},"id":"d40246ee-b903-41e3-843e-850cb8e50bb4","type":"WheelZoomTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"8e8b9d36-c1d9-4184-8bd2-3b0a91143f68","type":"BoxAnnotation"},{"attributes":{"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"}},"id":"e69927b0-fb2b-4537-8056-4400c84f46bc","type":"PanTool"},{"attributes":{},"id":"59420571-9c57-42bb-9182-d7a524882319","type":"BasicTickFormatter"},{"attributes":{"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"}},"id":"4d295598-d7ae-4b6e-95f0-dc39f8fa7b52","type":"ResetTool"},{"attributes":{"plot":{"id":"5cdefea4-e9ae-465d-b03f-673abf040c90","subtype":"Chart","type":"Plot"}},"id":"ce2aed9d-201b-4f01-adee-1b7b05d04538","type":"PreviewSaveTool"},{"attributes":{},"id":"76f8de1f-eb26-430f-8c74-44e83ce1a519","type":"BasicTicker"}],"root_ids":["621446cd-45e1-40f0-91d1-0f7a4c34ae8e"]},"title":"Bokeh Application","version":"0.11.1"}};
+var render_items = [{"docid":"c2ec97c1-77f5-4c47-b0df-ffac3bf7d405","elementid":"f7a14457-8028-4aee-861a-13306246316b","modelid":"621446cd-45e1-40f0-91d1-0f7a4c34ae8e"}];
+Bokeh.embed.embed_items(docs_json, render_items);
+});
+</script>
+				</div>
+
+				<div id="trade" class="container">
+					<div class="section-head text-center">
+						<h3><span class="frist"> </span>EQUIPMENT TRADING<span class="second"> </span></h3>
+						<div class="resize-centre"><img src="static/img/banner.png"></div>
+					</div>
+					<div class="col-md-6 features-info resize">
+									<img src="static/img/icon_treadmill.png">
+									<h4>Treadmills</h4>
+									<div class="text-left">
+										<h5>Availability: 7 </h5>	
+									</div>
+									<div class="text-right">
+										<p>Quantity: <p>
+									 	<select>
+										 	  <option value="volvo">Select</option>
+											  <option value="volvo">1</option>
+											  <option value="saab">2</option>
+											  <option value="mercedes">3</option>
+											  <option value="audi">4</option>
+											  <option value="volvo">5</option>
+											  <option value="saab">6</option>
+											  <option value="mercedes">7</option>
+											  <option value="audi">8</option>
+										</select>
+										<div class="big-btns text-right">
+			          						<a class="download" href="#thank"><label> </label>Request</a>
+			          						<a class="download" href="#thank"><label> </label>Offer</a>
+			          					</div>
+									</div>
+					</div>
+					<div class="col-md-6 features-info resize">
+									<img src="static/img/icon_freeweights.png">
+									<h4>Freeweights</h4>
+									<div class="text-left">
+										<h5>Availability: 15 </h5>	
+									</div>
+									<div class="text-right">
+										<p>Quantity: <p>
+									 	<select>
+										 	  <option value="volvo">Select</option>
+											  <option value="volvo">1</option>
+											  <option value="saab">2</option>
+											  <option value="mercedes">3</option>
+											  <option value="audi">4</option>
+											  <option value="volvo">5</option>
+											  <option value="saab">6</option>
+											  <option value="mercedes">7</option>
+											  <option value="audi">8</option>
+										</select>
+										<div class="big-btns text-right">
+			          						<a class="download" href="#thank"><label> </label>Request</a>
+			          						<a class="download" href="#thank"><label> </label>Offer</a>
+			          					</div>
+										
+									</div>
+					</div>
+					<div class="col-md-6 features-info resize">
+									<img src="static/img/icon_bench.png">
+									<h4>Bench</h4>
+									<div class="text-left">
+										<h5>Availability: 4 </h5>	
+									</div>
+									<div class="text-right">
+										<p>Quantity: <p>
+									 	<select>
+										 	  <option value="volvo">Select</option>
+											  <option value="volvo">1</option>
+											  <option value="saab">2</option>
+											  <option value="mercedes">3</option>
+											  <option value="audi">4</option>
+											  <option value="volvo">5</option>
+											  <option value="saab">6</option>
+											  <option value="mercedes">7</option>
+											  <option value="audi">8</option>
+										</select>
+										<div class="big-btns text-right">
+			          						<a class="download" href="#thank"><label> </label>Request</a>
+			          						<a class="download" href="#thank"><label> </label>Offer</a>
+			          					</div>
+									</div>
+					</div>
+					<div class="col-md-6 features-info resize">
+									<img src="static/img/icon_squatrack.png">
+									<h4>Squatrack</h4>
+									<div class="text-left">
+										<h5>Availability: 1 </h5>	
+									</div>
+									<div class="text-right">
+										<p>Quantity: <p>
+									 	<select>
+										 	  <option value="volvo">Select</option>
+											  <option value="volvo">1</option>
+											  <option value="saab">2</option>
+											  <option value="mercedes">3</option>
+											  <option value="audi">4</option>
+											  <option value="volvo">5</option>
+											  <option value="saab">6</option>
+											  <option value="mercedes">7</option>
+											  <option value="audi">8</option>
+										</select>
+										<div class="big-btns text-right">
+			          						<a class="download" href="#thank"><label> </label>Request</a>
+			          						<a class="download" href="#thank"><label> </label>Offer</a>
+			          					</div>
+									</div>
+					</div>
+				</div>
+
+				<div id="thank" class="full-size">
+					<div class="section-head text-center">
+						<h3><span class="frist"> </span>We will process your request immediately<span class="second"> </span></h3>
+						<img src="static/img/heart-icon.png">
+					</div>
+				</div>
+							
 	</body>
 </html>
 

@@ -59,7 +59,7 @@ body a{
 .top-nav ul li a{
 	color: #7E7C7E;
 	padding: 0.2em 1.5em;
-	font-size: 0.9em;
+	font-size: 1.4em;
 	font-weight: 400;
 	text-align: center;
 	text-transform: uppercase;
@@ -1268,4 +1268,84 @@ p.copy a:hover{
 	.getintouch {
 		padding: 0em 0 0 0;
 	}
+}
+
+#guy-resize img {
+	display: block;
+	
+	height: 90vh;
+	width: auto;
+
+}
+
+
+#girl-resize img {
+	display: block;
+	
+	height: 90vh;
+	width: auto;
+
+}
+
+.white-text h1 {
+	color: #FFFFFF;
+}
+
+.white-text h2 {
+	color: #FFFFFF;
+}
+
+.white-text ul {
+	color: #FFFFFF;
+}
+
+.white-text ul > li {
+	color: #FFFFFF;
+}
+
+#bull li:before {
+	content: "> ";
+	color: #FFFFFF;
+}
+
+#bull ul {
+	list-style-type: none;
+}
+
+.text-left {
+	float: left;
+	display: inline;
+}
+
+.text-left select {
+	float: left;
+	display: inline;
+}
+
+.text-right {
+	float: right;
+	display: inline;
+}
+
+.text-right a {
+	right: auto;
+	display: inline;
+}
+
+.resize img {
+	display: inline;
+	width: 15%;
+	height: auto;
+}
+
+.resize-centre img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	height: auto;
+}
+
+.full-size {
+	height: 100vh;
 }
