@@ -5,7 +5,6 @@ ser = serial.Serial('COM6', 9600)
 
 import time
 
-
 touch1,touch2,touch3, accXO,accYO,accZO=map(int,[ser.readline() for _ in range(6)])
 tol=20
 def curTime():
@@ -41,15 +40,12 @@ while True:
         print 'ACCEL IN USE'
         accYO=accY
         last[4]=curTime()
-
     elif abs(accZ-accZO)>tol:
         print 'ACCEL IN USE'
         accZO=accZ
         last[4]=curTime()
-
     elif curTime()-last[4]>threshold:
         print 'ACCEL NOT IN USE'
     else:
         print 'ACCEL IN USE, TIMER'
-
     print '------------'
