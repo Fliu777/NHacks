@@ -6,6 +6,7 @@ very refined tuning of subplot creation, you can still use add_subplot()
 directly on a new figure.
 """
 
+import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
@@ -66,6 +67,14 @@ lum_img=img[:,:,0]
 
 f, (ax1, ax2, ax3,ax4) = plt.subplots(4, sharex=True, sharey=True,facecolor="white")
 ax1=plt.subplot2grid((4,2),(0,0),colspan=1)
+
+#LEGEND
+red_patch = mpatches.Patch(color='red', label='Squat Racks')
+ora_patch = mpatches.Patch(color='orange', label='Treadmills')
+blue_patch = mpatches.Patch(color='blue', label='Bench')
+gray_patch = mpatches.Patch(color='gray', label='Free Weights')
+plt.legend(handles=[red_patch, ora_patch, blue_patch, gray_patch], loc=1) 
+    
 ax2=plt.subplot2grid((4,2),(1,0),colspan=1)
 ax3=plt.subplot2grid((4,2),(2,0),colspan=1)
 ax4=plt.subplot2grid((4,2),(3,0),colspan=1)
@@ -76,7 +85,7 @@ ax5.imshow(lum_img,cmap=plt.cm.gray)
 
 f.tight_layout()
 f.subplots_adjust(hspace=0,wspace=0)
-generatedValues=[[10] for _ in range(4)]
+generatedValues=[[10] for _ in range(5)]
 
 plt.ion()
 plt.show(block=False)
@@ -84,8 +93,8 @@ plt.show(block=False)
 maxPoints=10
 
 
-diffs=[None]*4
-trigger=[False]*4
+diffs=[None]*5
+trigger=[False]*5
 #Loop
 
 ax4.set_ylim([0,100])
@@ -97,13 +106,13 @@ colours=['red','blue','green','orange']
 colours=['red','blue','green','orange']
 import pylab #Imports matplotlib and a host of other useful modules
 
-radii=[50]*4
-ccol=['r','r','r','r']
+radii=[50]*5
+ccol=['r','r','r','r','r']
 
 opa=0.5
 
 
-locations=[(305,600),(595,306),(272,1318),(915,1820)]
+locations=[(305,600),(595,306),(272,1320),(910,1820), (903, 1325)]
 colourQueue=[]
 
 
@@ -124,7 +133,7 @@ while True:
 	    generatedValues[idx]=generatedValues[idx][-maxPoints:]
 	    #print len(dates),len(generatedValues[0])
     
-    for i in xrange(4):
+    for i in xrange(5):
 	if diffs[i] and trigger[i]==False:
 	    trigger[i]=True
 	    newV=generatedValues[i][-1]+20
@@ -139,8 +148,8 @@ while True:
 	    for j in colourQueue:
 		j.remove()
 	    colourQueue=[]
-	    for j in xrange(4):
-		colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j]))
+	    for j in xrange(5):
+		colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j], ec='none'))
 		ax5.add_patch(colourQueue[-1])
 		
 	elif not diffs[i] and trigger[i]==True:
@@ -160,8 +169,8 @@ while True:
 	    for j in colourQueue:
 		j.remove()
 	    colourQueue=[]
-	    for j in xrange(4):
-		colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j]))
+	    for j in xrange(5):
+		colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j], ec='none'))
 		ax5.add_patch(colourQueue[-1])
 	else:
 	    generatedValues[i].append(generatedValues[i][-1])
@@ -190,19 +199,34 @@ while True:
     #ax4.xaxis.set_major_locator(hours)
     #ax4.xaxis.set_minor_locator(minutes)
     
+    #Sets X-axis timer
     majorFormatter = mpl.dates.DateFormatter('%H:%M:%S')
     ax1.xaxis.set_major_formatter(majorFormatter)
     ax2.xaxis.set_major_formatter(majorFormatter)
     ax3.xaxis.set_major_formatter(majorFormatter)
-    ax4.xaxis.set_major_formatter(majorFormatter)    
+    ax4.xaxis.set_major_formatter(majorFormatter)
+       
     
     ax1.set_xlim([dates[0],dates[-1]])
     ax2.set_xlim([dates[0],dates[-1]])
     ax3.set_xlim([dates[0],dates[-1]])
     ax4.set_xlim([dates[0],dates[-1]])
-
+    
+    #Removes 0 Ticks
+    ax1.yaxis.get_major_ticks()[0].label1.set_visible(False)
+    ax2.yaxis.get_major_ticks()[0].label1.set_visible(False)
+    ax3.yaxis.get_major_ticks()[0].label1.set_visible(False)
+    
+    #Removes Map Axis Labels
+    ax5.yaxis.set_visible(False)
+    ax5.xaxis.set_visible(False)
+    
+    #Removes Top 3 chart x-axis
     plt.setp([a.get_xticklabels() for a in f.axes[:-2]], visible=False)
     
+    
+       
+
 
     touch1,touch2,touch3, accX,accY,accZ=map(int,[ser.readline() for _ in range(6)])
 
@@ -243,13 +267,12 @@ while True:
 	for j in colourQueue:
 	    j.remove()
 	colourQueue=[]
-	for j in xrange(4):
-	    colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j]))
+	for j in xrange(5):
+	    colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j], ec='none'))
 	    ax5.add_patch(colourQueue[-1])
     
-    for i in xrange(4):
+    for i in xrange(5):
 	if diffs[i]:
-	    print "changed?"
 	    ccol[i]='g'
 	    radii[i]*=1.03
 	else:
