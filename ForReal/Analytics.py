@@ -7,6 +7,7 @@ directly on a new figure.
 """
 
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import numpy as np
 import datetime
 import matplotlib
@@ -54,8 +55,12 @@ dates=[datetime.datetime.today()]
 
 plt.close('all')
 
+minutes     = mpl.dates.MinuteLocator()
+hours    = mpl.dates.HourLocator()
 
-img=mpimp.imread("map3.png")
+
+img=mpimg.imread("map3.png")
+
 lum_img=img[:,:,0]
 
 
@@ -66,11 +71,12 @@ ax3=plt.subplot2grid((4,2),(2,0),colspan=1)
 ax4=plt.subplot2grid((4,2),(3,0),colspan=1)
 ax5=plt.subplot2grid((4,2),(0,1),rowspan=4)
 
-ax5.imshow(lum_img)
+ax5.imshow(lum_img,cmap=plt.cm.gray)
+
 
 f.tight_layout()
 f.subplots_adjust(hspace=0,wspace=0)
-generatedValues=[[50] for _ in range(4)]
+generatedValues=[[10] for _ in range(4)]
 
 plt.ion()
 plt.show(block=False)
@@ -87,12 +93,27 @@ ax3.set_ylim([0,100])
 ax2.set_ylim([0,100])
 ax1.set_ylim([0,100])
 colours=['red','blue','green','orange']
+
+colours=['red','blue','green','orange']
+import pylab #Imports matplotlib and a host of other useful modules
+
+radii=[50]*4
+ccol=['r','r','r','r']
+
+opa=0.5
+
+
+locations=[(305,600),(595,306),(272,1318),(915,1820)]
+colourQueue=[]
+
+
 while True:
     now=datetime.datetime.today()
     #print now
     diff=now-lastUpdate
+    """
 
-
+"""
     if (diff.seconds>2):
 	diff=datetime.datetime.today()
     else:
@@ -115,7 +136,13 @@ while True:
 		if newV>100:newV=100
 		if newV<0:newV=0
 		generatedValues[i].append(newV)
-
+	    for j in colourQueue:
+		j.remove()
+	    colourQueue=[]
+	    for j in xrange(4):
+		colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j]))
+		ax5.add_patch(colourQueue[-1])
+		
 	elif not diffs[i] and trigger[i]==True:
 	    newV=generatedValues[i][-1]-20
 	    if i==2:
@@ -128,6 +155,14 @@ while True:
 		if newV<0:newV=0
 		generatedValues[i].append(newV)
 	    trigger[i]=False
+
+
+	    for j in colourQueue:
+		j.remove()
+	    colourQueue=[]
+	    for j in xrange(4):
+		colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j]))
+		ax5.add_patch(colourQueue[-1])
 	else:
 	    generatedValues[i].append(generatedValues[i][-1])
 	    
@@ -143,44 +178,58 @@ while True:
 
     #print dates, generatedValues[0]
     ax1.step(dates,generatedValues[0],linewidth=5, color='red')
-    ax1.set_title('Machine Consumption')
+    ax1.set_title('Equipment Consumption % March 13, 2016')
     ax2.step(dates,generatedValues[1],linewidth=5, color='orange')
     #ax2.plot_date(dates, y)
     ax3.step(dates,generatedValues[2],linewidth=5, color='blue')
     ax4.step(dates,generatedValues[3],linewidth=5, color='gray')
-    #ax4.xaxis.set_major_formatter(dates.DateFormatter("%h:%m"))
     # Fine-tune figure; make subplots close to each other and hide x ticks for
     # all but bottom plot.
     #f.subplots_adjust(hspace=0)
-
+    
+    #ax4.xaxis.set_major_locator(hours)
+    #ax4.xaxis.set_minor_locator(minutes)
+    
+    majorFormatter = mpl.dates.DateFormatter('%H:%M:%S')
+    ax1.xaxis.set_major_formatter(majorFormatter)
+    ax2.xaxis.set_major_formatter(majorFormatter)
+    ax3.xaxis.set_major_formatter(majorFormatter)
+    ax4.xaxis.set_major_formatter(majorFormatter)    
+    
+    ax1.set_xlim([dates[0],dates[-1]])
+    ax2.set_xlim([dates[0],dates[-1]])
+    ax3.set_xlim([dates[0],dates[-1]])
     ax4.set_xlim([dates[0],dates[-1]])
 
-    plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=True)
-    #plt.xticks()
+    plt.setp([a.get_xticklabels() for a in f.axes[:-2]], visible=False)
     
-    plt.draw()
+
     touch1,touch2,touch3, accX,accY,accZ=map(int,[ser.readline() for _ in range(6)])
 
     diffs[0]=check_touch(touch1,0)
     diffs[1]=check_touch(touch2,1)
     diffs[2]=check_touch(touch3,2)    
 
+    past=diffs[3]
     #ACCEL SENSOR 12C
     if abs(accX-accXO)>tol:
     	print 'ACCEL IN USE'
     	accXO=accX
     	last[4]=curTime()
 	diffs[3]=True
+	
     elif abs(accY-accYO)>tol:
     	print 'ACCEL IN USE'
     	accYO=accY
     	last[4]=curTime()
 	diffs[3]=True
+	
     elif abs(accZ-accZO)>tol:
     	print 'ACCEL IN USE'
     	accZO=accZ
     	last[4]=curTime()
     	diffs[3]=True
+	
     elif curTime()-last[4]>threshold:
 	print 'ACCEL NOT IN USE'
     	diffs[3]=False
@@ -188,6 +237,24 @@ while True:
     	print 'ACCEL IN USE, TIMER'
 	print '------------'
     	diffs[3]=True
-
-    plt.pause(0.05)
+    
+    if diffs[3]!=past:
+    
+	for j in colourQueue:
+	    j.remove()
+	colourQueue=[]
+	for j in xrange(4):
+	    colourQueue.append( pylab.Circle(locations[j], radius=radii[j],  alpha=opa,fc=ccol[j]))
+	    ax5.add_patch(colourQueue[-1])
+    
+    for i in xrange(4):
+	if diffs[i]:
+	    print "changed?"
+	    ccol[i]='g'
+	    radii[i]*=1.03
+	else:
+	    ccol[i]='r'
+	    
+    plt.draw()    
+    plt.pause(0.1)
     #time.sleep(0.05)
