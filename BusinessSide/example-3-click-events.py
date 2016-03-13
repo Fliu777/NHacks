@@ -3,9 +3,11 @@ from flask.ext.socketio import SocketIO, emit
 
 import json
 import plotly
+import plotly.plotly as py
 
 import dash.utils as utils
 from dash.components import graph
+
 
 name = 'dash-3-click-events'
 app = Flask(name)
@@ -24,14 +26,13 @@ utils.write_templates(
         # 'controls.html' is already written as a raw html file in
         # templates/runtime/dash-3-click-events
         'leftgraph': [graph('bubbles')],
-        'rightgraph': [graph('line-chart')]
+        'rightgraph': [graph('polar-area-chart')]
     }, name
 )
 
 
 @app.route('/')
 def index():
-
     return render_template('layouts/layout_two_column_and_controls.html',
                            app_name=name)
 
@@ -46,6 +47,7 @@ def onpong(app_state):
 @socketio.on('replot')
 def replot(app_state):
     print(app_state)
+    print "calling stuff"
     messages = dash.replot(app_state)
     emit('postMessage', json.dumps(messages,
                                    cls=plotly.utils.PlotlyJSONEncoder))

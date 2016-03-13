@@ -1,10 +1,6 @@
 import pandas as pd
 import plotly.plotly as py
 import plotly.graph_objs as go
-import datetime
-import time
-import random
-
 
 class Dash():
     def __init__(self):
@@ -18,7 +14,7 @@ class Dash():
         pass
 
     def on_pong(self, message):
-        #print('on_pong')
+        print('on_pong')
         messages = []
         messages.extend(self.replot(message))
         return messages
@@ -30,8 +26,12 @@ class Dash():
         hoursOpen=24
         date_list = [base - datetime.timedelta(hours=x) for x in range(0, hoursOpen)]
         for idx, val in enumerate(date_list):
-            date_list[idx]=date_list[idx].replace(hour=(idx)%24, minute=0, second=0)
+            date_list[idx]=date_list[idx].replace(hour=(idx+7)%24, minute=0, second=0)
         pairArr=map(lambda t: t.hour,date_list)
+
+        import pprint
+
+        pprint.pprint(pairArr)
 
         values=[[random.uniform(10, 33) for x in range(hoursOpen)]]
         for _ in xrange(2):
@@ -50,36 +50,28 @@ class Dash():
         for i in xrange(4):
             data.append(go.Area(
                             r=values[i],
-                            t=pairArr,
+                            t=date_list,
                             name=names[i],
                             marker=dict(
                                 color=colours[i]
-                            ) 
+                            )
                             ))
-        print data[0].help('tsrc')
 
         layout = go.Layout(
-            title='Day Record of Capacity',
+            title='Wind Speed Distribution in Laurel, NE',
             font=dict(
                 size=10
             ),
             radialaxis=dict(
-                ticksuffix='%',
-                visible=False,
-                showline=False
+                ticksuffix='%'
             ),
-            angularaxis=dict(
-                range=[0,24],
-                visible=False,
-                showline=False
-            ),
-            orientation=0
+            orientation=270
         )
-        #layout.showticklables(False)
         fig = {
             'data': data,
             'layout': layout
         }
+	pprint(fig)
         return fig
     def getLine(self,app_state):
         if False and 'click' in app_state:
@@ -201,15 +193,10 @@ class Dash():
                 'layout': fig['layout']
             }
         ]
-        fig=self.getAreaChart()
 
-        messages.extend([
-            {
-                'id': 'polar-area-chart',
-                'task': 'newPlot',
-                'data': fig['data'],
-                'layout': fig['layout']
-            }
-        ])
+        messages.append(self.getAreaChart())
+        import pprint
+        pprint.pprint(messages)
+
         
         return messages
