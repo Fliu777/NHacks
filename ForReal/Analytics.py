@@ -12,6 +12,10 @@ import datetime
 import matplotlib
 import random
 import time
+from matplotlib.dates import DateFormatter
+import matplotlib.image as mpimg
+
+
 #Arduino
 import serial
 ser = serial.Serial('COM6', 9600)
@@ -45,17 +49,24 @@ def check_touch(curTouch, idx):
 lastUpdate=datetime.datetime.today()
 
 base = datetime.datetime.today()
+
 dates=[datetime.datetime.today()]
 
 plt.close('all')
 
-f, (ax1, ax2, ax3,ax4) = plt.subplots(4, sharex=True, sharey=True,facecolor="white")
-ax0=plt.subplot2grid((3,3),(0,0),colspan=1)
-ax1=plt.subplot2grid((3,3),(1,0),colspan=1)
-ax2=plt.subplot2grid((3,3),(2,0),colspan=1)
-ax3=plt.subplot2grid((3,3),(3,0),colspan=1)
-ax4=plt.subplot2grid((3,3),(1,0),colspan=1)
 
+img=mpimp.imread("map3.png")
+lum_img=img[:,:,0]
+
+
+f, (ax1, ax2, ax3,ax4) = plt.subplots(4, sharex=True, sharey=True,facecolor="white")
+ax1=plt.subplot2grid((4,2),(0,0),colspan=1)
+ax2=plt.subplot2grid((4,2),(1,0),colspan=1)
+ax3=plt.subplot2grid((4,2),(2,0),colspan=1)
+ax4=plt.subplot2grid((4,2),(3,0),colspan=1)
+ax5=plt.subplot2grid((4,2),(0,1),rowspan=4)
+
+ax5.imshow(lum_img)
 
 f.tight_layout()
 f.subplots_adjust(hspace=0,wspace=0)
@@ -137,6 +148,7 @@ while True:
     #ax2.plot_date(dates, y)
     ax3.step(dates,generatedValues[2],linewidth=5, color='blue')
     ax4.step(dates,generatedValues[3],linewidth=5, color='gray')
+    #ax4.xaxis.set_major_formatter(dates.DateFormatter("%h:%m"))
     # Fine-tune figure; make subplots close to each other and hide x ticks for
     # all but bottom plot.
     #f.subplots_adjust(hspace=0)
@@ -144,8 +156,8 @@ while True:
     ax4.set_xlim([dates[0],dates[-1]])
 
     plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=True)
+    #plt.xticks()
     
-
     plt.draw()
     touch1,touch2,touch3, accX,accY,accZ=map(int,[ser.readline() for _ in range(6)])
 
