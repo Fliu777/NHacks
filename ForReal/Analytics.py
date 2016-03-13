@@ -59,7 +59,7 @@ maxPoints=10
 
 #Loop
 while True:
-        now=datetime.datetime.today()
+	now=datetime.datetime.today()
 	#print now
 	diff=now-lastUpdate
 
@@ -101,31 +101,29 @@ while True:
 	plt.draw()
 	touch1,touch2,touch3, accX,accY,accZ=map(int,[ser.readline() for _ in range(6)])
 
-        check_touch(touch1,0)
-        check_touch(touch2,1)
-        check_touch(touch3,2)    
+    check_touch(touch1,0)
+    check_touch(touch2,1)
+    check_touch(touch3,2)    
 
-        #ACCEL SENSOR 12C
-        if abs(accX-accXO)>tol:
-                print 'ACCEL IN USE'
-                accXO=accX
-                last[4]=curTime()
-        elif abs(accY-accYO)>tol:
-                print 'ACCEL IN USE'
-                accYO=accY
-                last[4]=curTime()
+    #ACCEL SENSOR 12C
+    if abs(accX-accXO)>tol:
+    	print 'ACCEL IN USE'
+    	accXO=accX
+    	last[4]=curTime()
+    elif abs(accY-accYO)>tol:
+    	print 'ACCEL IN USE'
+    	accYO=accY
+    	last[4]=curTime()
 
-        elif abs(accZ-accZO)>tol:
-                print 'ACCEL IN USE'
-                accZO=accZ
-                last[4]=curTime()
-
-        elif curTime()-last[4]>threshold:
-                print 'ACCEL NOT IN USE'
-        else:
-                print 'ACCEL IN USE, TIMER'
-
-        print '------------'
+    elif abs(accZ-accZO)>tol:
+    	print 'ACCEL IN USE'
+    	accZO=accZ
+    	last[4]=curTime()
+	elif curTime()-last[4]>threshold:
+    	print 'ACCEL NOT IN USE'
+    else:
+    	print 'ACCEL IN USE, TIMER'
+	print '------------'
 
 	plt.pause(0.1)
 	#time.sleep(0.05)
